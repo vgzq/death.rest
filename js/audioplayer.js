@@ -11,7 +11,7 @@ const playerToggle = document.getElementById('player-toggle');
 
 const songs = [
   'Pain.mp3',
-  'Skin.mp3',
+  'skin.mp3',
   'te amé.mp3',
   'Were Better In 2015.mp3',
   'just leave me to bleed.mp3',
