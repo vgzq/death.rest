@@ -7,7 +7,7 @@ const profiles = {
   yuta: {
     img: 'images/yuta.png',
     desc: 'Nah id Win',
-    link: 'https://refrain.lol' // Use full URL for reliability
+    link: 'https://refrain.lol'
   },
   rosie: {
     img: 'images/rosie.png',
@@ -23,7 +23,13 @@ const profiles = {
     img: 'images/mao.png',
     desc: 'stimming and eating lots of chicken',
     link: 'https://x.com/Le_Maoshroom'
+  },
+  krozeii: {
+    img: 'images/krozeii.png',
+    desc: 'They call me "A young prodigy"',
+    link: 'https://crier.lol'
   }
+  
 };
 
 // Preload images
@@ -52,7 +58,7 @@ document.querySelectorAll('.profile-name').forEach(nameEl => {
       profilePic.src = profile.img;
       profileDesc.textContent = profile.desc;
       profilePic.alt = `${key} profile picture`;
-      profileLink.href = profile.link; // ← This line sets the redirect link
+      profileLink.href = profile.link;
       profileDisplay.style.display = 'flex';
       currentProfile = key;
     }
