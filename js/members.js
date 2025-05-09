@@ -25,7 +25,7 @@ const profiles = {
     link: 'https://x.com/Le_Maoshroom'
   },
   krozeii: {
-    img: 'images/krozeii.png',
+    img: 'images/krozeii.jpg',
     desc: 'They call me "A young prodigy"',
     link: 'https://guns.lol/krozeii'
   }
