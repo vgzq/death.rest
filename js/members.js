@@ -27,7 +27,7 @@ const profiles = {
   krozeii: {
     img: 'images/krozeii.png',
     desc: 'They call me "A young prodigy"',
-    link: 'https://crier.lol'
+    link: 'https://guns.lol/krozeii'
   }
   
 };
