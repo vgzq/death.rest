@@ -11,14 +11,13 @@ const playerToggle = document.getElementById('player-toggle');
 
 const songs = [
   'Pain.mp3',
-  'skin.mp3',
-  'te amé.mp3',
-  'Were Better In 2015.mp3',
+  'but i want her.mp3',
+  'E t h e r e a l.mp3',
+  'Silent Hill 3.mp3',
   'just leave me to bleed.mp3',
   'let me go.mp3',
-  'im not alex g and ur not sarah.mp3',
-  'snowfall.mp3',
-  'Diamonds.mp3'
+  'wtf im crying.mp3',
+  'welcome and goodbye.mp3'
 ];
 
 let currentSongIndex = 0;
