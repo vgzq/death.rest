@@ -12,7 +12,7 @@ const playerToggle = document.getElementById('player-toggle');
 const songs = [
   'Pain.mp3',
   'but i want her.mp3',
-  'When She Left This World.mp3',
+  'skin.mp3',
   'E t h e r e a l.mp3',
   'Silent Hill 3.mp3',
   'just leave me to bleed.mp3',
