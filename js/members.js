@@ -10,7 +10,7 @@ const profiles = {
     link: 'https://refrain.lol'
   },
   rosie: {
-    img: 'images/rosie.png',
+    img: 'images/rosie.jpg',
     desc: 'you promised to take me to silent hill',
     link: 'https://crier.lol'
   },
