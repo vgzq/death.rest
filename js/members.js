@@ -11,7 +11,7 @@ const profiles = {
   },
   rosie: {
     img: 'images/rosie.png',
-    desc: 'literally a rose',
+    desc: 'you promised to take me to silent hill',
     link: 'https://crier.lol'
   },
   zqmbie: {
