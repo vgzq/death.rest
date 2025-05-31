@@ -122,29 +122,27 @@
   <!-- CAPTCHA LOGIC -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Hide boot screen and prompt until CAPTCHA is passed
+    // Initially hide the boot screen and content
     document.getElementById('boot-screen').style.display = 'none';
-    const clickPrompt = document.querySelector('.click-prompt');
-    if (clickPrompt) clickPrompt.style.display = 'none';
+    document.getElementById('content-wrapper').style.display = 'none';
   });
 
   function onCaptchaSuccess(token) {
-    // CAPTCHA passed → hide CAPTCHA UI, show boot screen
+    // CAPTCHA passed → hide CAPTCHA, show boot
     document.getElementById('captcha-container').style.display = 'none';
     document.getElementById('boot-screen').style.display = 'block';
 
-    // After boot sequence finishes, show click prompt (but don't enter yet)
-    setTimeout(() => {
-      const clickPrompt = document.querySelector('.click-prompt');
-      if (clickPrompt) clickPrompt.style.display = 'block';
+    // Let your boot animation (CSS) handle the "click to continue" text appearance
+    const clickPrompt = document.querySelector('.click-prompt');
 
-      // Allow user to click to continue
+    // Add click listener immediately (but user won't see the text until CSS animates it)
+    if (clickPrompt) {
       clickPrompt.addEventListener('click', () => {
         document.getElementById('boot-screen').style.display = 'none';
         document.getElementById('content-wrapper').style.display = 'block';
         document.getElementById('content-wrapper').style.filter = 'none';
       });
-    }, 4000); // Adjust to match your boot animation length
+    }
   }
 </script>
 
