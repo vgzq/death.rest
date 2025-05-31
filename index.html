@@ -1,14 +1,23 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>death.rest</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="css/loading.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
-  <div id="boot-screen">
+  <!-- CAPTCHA -->
+  <div class="captcha-wrapper" style="margin-top: 20px; text-align: center;" id="captcha-container">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAABfYXCshxivGFX87" data-callback="onCaptchaSuccess"></div>
+  </div>
+
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen" style="display: none;">
     <div class="scanline"></div>
     <div class="boot-sequence">
       <div class="header">
@@ -45,12 +54,13 @@
       </div>
 
       <div class="status">SYSTEM READY</div>
-      <div class="click-prompt">click to continue</div>
+      <div class="click-prompt" style="display: none;">click to continue</div>
     </div>
   </div>
 
   <div id="click-text"></div>
 
+  <!-- MAIN CONTENT -->
   <div id="content-wrapper" style="display: none; filter: blur(5px);">
     <div id="logo">
       <img src="images/logo.gif" alt="Logo">
@@ -63,18 +73,19 @@
         <div class="profile-name" data-name="rosie">rosie</div>
         <div class="profile-name" data-name="zqmbie">zqmbie</div>
         <div class="profile-name" data-name="maoshroom">maoshroom</div>
-		<div class="profile-name" data-name="krozeii">krozeii</div>
+        <div class="profile-name" data-name="krozeii">krozeii</div>
       </div>
 
-        <div id="profile-display" style="display: none;">
-          <a id="profile-link" target="_blank">
-            <img id="profile-pic" src="" alt="Profile">
-          </a>
-          <p id="profile-desc"></p>
-        </div>
+      <div id="profile-display" style="display: none;">
+        <a id="profile-link" target="_blank">
+          <img id="profile-pic" src="" alt="Profile">
+        </a>
+        <p id="profile-desc"></p>
       </div>
     </div>
+  </div>
 
+  <!-- AUDIO PLAYER -->
   <button id="player-toggle">MUSIC</button>
 
   <div id="audio-player">
@@ -96,6 +107,7 @@
 
   <audio id="music"></audio>
 
+  <!-- SCRIPTS -->
   <script src="js/glitch.js"></script>
   <script src="js/boot.js"></script>
   <script src="js/members.js"></script>
@@ -103,4 +115,29 @@
   <script src="js/highlight.js"></script>
   <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 
-</body></html>
+  <!-- CAPTCHA LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Make sure boot screen is hidden until CAPTCHA is passed
+      document.getElementById('boot-screen').style.display = 'none';
+      const clickPrompt = document.querySelector('.click-prompt');
+      if (clickPrompt) clickPrompt.style.display = 'none';
+    });
+
+    function onCaptchaSuccess(token) {
+      // CAPTCHA verified
+      document.getElementById('captcha-container').style.display = 'none';
+      document.getElementById('boot-screen').style.display = 'block';
+
+      // After a delay, unlock main content
+      setTimeout(() => {
+        document.getElementById('content-wrapper').style.display = 'block';
+        document.getElementById('content-wrapper').style.filter = 'none';
+        const clickPrompt = document.querySelector('.click-prompt');
+        if (clickPrompt) clickPrompt.style.display = 'block';
+      }, 4000); // Delay matches boot sequence duration
+    }
+  </script>
+
+</body>
+</html>
