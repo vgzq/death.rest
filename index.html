@@ -120,28 +120,25 @@
   <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 
   <!-- CAPTCHA LOGIC -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Make sure boot screen is hidden until CAPTCHA is passed
-      document.getElementById('boot-screen').style.display = 'none';
-      const clickPrompt = document.querySelector('.click-prompt');
-      if (clickPrompt) clickPrompt.style.display = 'none';
-    });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hide boot screen and click prompt until CAPTCHA is passed
+    document.getElementById('boot-screen').style.display = 'none';
+    const clickPrompt = document.querySelector('.click-prompt');
+    if (clickPrompt) clickPrompt.style.display = 'none';
+  });
 
-    function onCaptchaSuccess(token) {
-      // CAPTCHA verified
-      document.getElementById('captcha-container').style.display = 'none';
-      document.getElementById('boot-screen').style.display = 'block';
-
-      // After a delay, unlock main content
-      setTimeout(() => {
-        document.getElementById('content-wrapper').style.display = 'block';
-        document.getElementById('content-wrapper').style.filter = 'none';
-        const clickPrompt = document.querySelector('.click-prompt');
-        if (clickPrompt) clickPrompt.style.display = 'block';
-      }, 4000); // Delay matches boot sequence duration
-    }
-  </script>
+  function onCaptchaSuccess(token) {
+    // CAPTCHA verified
+    document.getElementById('captcha-container').style.display = 'none';
+    document.getElementById('boot-screen').style.display = 'none';
+    document.getElementById('content-wrapper').style.display = 'block';
+    document.getElementById('content-wrapper').style.filter = 'none';
+    
+    const clickPrompt = document.querySelector('.click-prompt');
+    if (clickPrompt) clickPrompt.style.display = 'block';
+  }
+</script>
 
 </body>
 </html>
