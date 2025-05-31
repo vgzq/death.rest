@@ -122,21 +122,26 @@
   <!-- CAPTCHA LOGIC -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Hide boot screen and click prompt until CAPTCHA is passed
+    // Initially hide boot screen and click prompt until CAPTCHA is passed
     document.getElementById('boot-screen').style.display = 'none';
     const clickPrompt = document.querySelector('.click-prompt');
     if (clickPrompt) clickPrompt.style.display = 'none';
   });
 
   function onCaptchaSuccess(token) {
-    // CAPTCHA verified
+    // CAPTCHA passed → hide captcha, show boot screen
     document.getElementById('captcha-container').style.display = 'none';
-    document.getElementById('boot-screen').style.display = 'none';
-    document.getElementById('content-wrapper').style.display = 'block';
-    document.getElementById('content-wrapper').style.filter = 'none';
-    
-    const clickPrompt = document.querySelector('.click-prompt');
-    if (clickPrompt) clickPrompt.style.display = 'block';
+    document.getElementById('boot-screen').style.display = 'block';
+
+    // After boot sequence (e.g. 4 seconds), show main content
+    setTimeout(() => {
+      document.getElementById('boot-screen').style.display = 'none';
+      document.getElementById('content-wrapper').style.display = 'block';
+      document.getElementById('content-wrapper').style.filter = 'none';
+
+      const clickPrompt = document.querySelector('.click-prompt');
+      if (clickPrompt) clickPrompt.style.display = 'block';
+    }, 4000); // Match boot animation duration
   }
 </script>
 
