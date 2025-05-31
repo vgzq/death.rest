@@ -10,8 +10,8 @@ const profiles = {
     link: 'https://refrain.lol'
   },
   rosie: {
-    img: 'images/rosie.jpg',
-    desc: 'you promised to take me to silent hill',
+    img: 'images/rosie.png',
+    desc: 'is suicide too much?',
     link: 'https://crier.lol'
   },
   zqmbie: {
