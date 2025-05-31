@@ -12,39 +12,35 @@
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <style>
-    /* Center captcha box full screen */
-    #captcha-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #111; /* dark background */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      flex-direction: column;
-      color: #eee;
-      font-family: monospace, monospace;
-      user-select: none;
-    }
+  #captcha-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000; /* pure black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+    color: #eee;
+    font-family: monospace, monospace;
+    user-select: none;
+  }
 
-    /* Optional: add some padding around captcha box */
-    .cf-turnstile {
-      background: #222 !important; /* Force dark background on captcha container */
-      border-radius: 12px;
-      padding: 15px;
-    }
-  </style>
-</head>
-<body>
+  .cf-turnstile {
+    background: #111 !important;
+    border-radius: 12px;
+    padding: 15px;
+  }
+</style>
 
-  <!-- CAPTCHA Container -->
-  <div id="captcha-container">
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAABfYXCshxivGFX87" data-theme="dark" data-callback="onCaptchaSuccess"></div>
-    <div style="margin-top: 1em; font-size: 0.9em; opacity: 0.6;">Please verify you're human to continue</div>
-  </div>
+<div id="captcha-container">
+  <div class="cf-turnstile" data-sitekey="0x4AAAAAABfYXCshxivGFX87" data-theme="dark" data-callback="onCaptchaSuccess"></div>
+  <div style="margin-top: 1em; font-size: 0.9em; opacity: 0.6;">Please verify you're human to continue</div>
+</div>
+
+<script src="js/glitch.js"></script>
 
   <!-- Your boot screen -->
   <div id="boot-screen" style="display:none;">
