@@ -23,11 +23,6 @@ const profiles = {
     img: 'images/mao.png',
     desc: 'stimming and eating lots of chicken',
     link: 'https://x.com/Le_Maoshroom'
-  },
-  krozeii: {
-    img: 'images/krozeii.jpg',
-    desc: 'They call me "A young prodigy"',
-    link: 'https://guns.lol/krozeii'
   }
   
 };
