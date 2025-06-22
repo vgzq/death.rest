@@ -23,11 +23,15 @@ const profiles = {
     img: 'images/mao.png',
     desc: 'stimming and eating lots of chicken',
     link: 'https://x.com/Le_Maoshroom'
-  }
+  },
+  maoshroom: {
+    img: 'images/duko.png',
+    desc: '',
+    link: 'https://guns.lol/duko./'
+  },
   
 };
 
-// Preload images
 Object.values(profiles).forEach(profile => {
   const img = new Image();
   img.src = profile.img;
