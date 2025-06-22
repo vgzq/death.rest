@@ -24,7 +24,7 @@ const profiles = {
     desc: 'stimming and eating lots of chicken',
     link: 'https://x.com/Le_Maoshroom'
   },
-  maoshroom: {
+  duko: {
     img: 'images/duko.png',
     desc: '',
     link: 'https://guns.lol/duko./'
