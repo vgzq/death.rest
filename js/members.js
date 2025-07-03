@@ -12,7 +12,7 @@ const profiles = {
   rosie: {
     img: 'images/rosie.png',
     desc: 'is suicide too much?',
-    link: 'https://crier.lol'
+    link: 'https://ptv.rest'
   },
   zqmbie: {
     img: 'images/zqmbie.png',
