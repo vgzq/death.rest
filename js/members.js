@@ -6,7 +6,7 @@ const profileDesc = document.getElementById('profile-desc');
 const profiles = {
   yuta: {
     img: 'images/yuta.png',
-    desc: 'i tried to kms',
+    desc: 'died at 3am',
     link: 'https://refrain.lol'
   },
   rosie: {
