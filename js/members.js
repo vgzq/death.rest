@@ -27,7 +27,7 @@ const profiles = {
   duko: {
     img: 'images/duko.png',
     desc: '',
-    link: 'https://guns.lol/duko./'
+    link: 'https://death.rest/duko'
   },
   
 };
