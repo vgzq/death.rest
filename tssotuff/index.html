@@ -22,6 +22,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      cursor: pointer; /* Makes it clear it's clickable */
     }
 
     #img, #txt {
@@ -67,6 +68,11 @@
 
       overlay.style.display = "none";
       videoContainer.style.display = "block";
+
+      // Redirect on click
+      video.onclick = () => {
+        window.location.href = "https://discord.gg/3am";
+      };
 
       try {
         video.muted = false;
